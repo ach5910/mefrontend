@@ -1,0 +1,159 @@
+*, *:after, *:before {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    outline: none;
+}
+  
+::-webkit-scrollbar{
+    display: none;
+}
+
+:root, [data-theme="purple-light"] {
+	--primary-500: #{$primary-500};
+
+	--primary-action: #{$primary-action};
+	--secondary-500: #{$primary-700};
+
+	--ripple-origin: rgba(98, 2, 238, 0.16);
+	--ripple: rgba(98, 2, 238, 0.16);
+
+	--theme-high-emphasis: #{$black-high-emphasis};
+	--theme-medium-emphasis: #{$black-medium-emphasis};
+	--theme-disabled: #{$black-disabled};
+	--theme-inactive: #{$black-inactive};
+
+	--contrast-high-emphasis: #{$white-high-emphasis};
+	--contrast-medium-emphasis: #{$white-medium-emphasis};
+	--contrast-disabled: #{$white-disabled};
+	--contrast-inactive: #{$white-inactive};
+
+	--surface: #{$surface};
+	--surface-2: #{$surface-2};
+
+	--theme-hover-overlay: #{$black-hover-overlay};
+	--theme-focus-overlay: #{$black-focus-overlay};
+	--theme-pressed-overlay: #{$black-pressed-overlay};
+
+	--contrast-hover-overlay: #{$white-hover-overlay};
+	--contrast-focus-overlay: #{$white-focus-overlay};
+	--contrast-pressed-overlay: #{$white-pressed-overlay};
+}
+.Light-Theme-1-hex { color: #29434E; }
+.Light-Theme-2-hex { color: #14CBA8; }
+.Light-Theme-3-hex { color: #90CC00; }
+.Light-Theme-4-hex { color: #C6FF00; }
+.Light-Theme-5-hex { color: #FF5252; }
+[data-theme="blue-light"] {
+	--primary-500: #29434E;
+
+	--primary-action: #C6FF00;
+	--secondary-500: #14CBA8;
+
+	--ripple: rgba(41,67, 78, 0.16);
+
+	--theme-high-emphasis: #{$black-high-emphasis};
+	--theme-medium-emphasis: #{$black-medium-emphasis};
+	--theme-disabled: #{$black-disabled};
+	--theme-inactive: #{$black-inactive};
+
+	--contrast-high-emphasis: #{$white-high-emphasis};
+	--contrast-medium-emphasis: #{$white-medium-emphasis};
+	--contrast-disabled: #{$white-disabled};
+	--contrast-inactive: #{$white-inactive};
+
+	--surface: #{$surface};
+	--surface-2: #{$surface-2};
+
+	--theme-hover-overlay: #{$black-hover-overlay};
+	--theme-focus-overlay: #{$black-focus-overlay};
+	--theme-pressed-overlay: #{$black-pressed-overlay};
+
+	--contrast-hover-overlay: #{$white-hover-overlay};
+	--contrast-focus-overlay: #{$white-focus-overlay};
+	--contrast-pressed-overlay: #{$white-pressed-overlay};
+}
+.Dark-Theme-1-hex { color: #819CA9; }
+.Dark-Theme-2-hex { color: #14CBA8; }
+.Dark-Theme-3-hex { color: #90CC00; }
+.Dark-Theme-4-hex { color: #C6FF00; }
+.Dark-Theme-5-hex { color: #FF5252; }
+[data-theme="blue-dark"] {
+	--primary-500: #819CA9;
+
+	--primary-action: #C6FF00;
+	--secondary-500: #14CBA8;
+
+	--ripple: rgba(129,156, 169, 0.16);
+
+	--theme-high-emphasis: #{$white-high-emphasis};
+	--theme-medium-emphasis: #{$white-medium-emphasis};
+	--theme-disabled: #{$white-disabled};
+	--theme-inactive: #{$white-inactive};
+
+	--contrast-high-emphasis: #{$black-high-emphasis};
+	--contrast-medium-emphasis: #{$black-medium-emphasis};
+	--contrast-disabled: #{$black-disabled};
+	--contrast-inactive: #{$black-inactive};
+
+	--surface: #121212;
+	--surface-2: #181818;
+
+	--theme-hover-overlay: #{$white-hover-overlay};
+	--theme-focus-overlay: #{$white-focus-overlay};
+	--theme-pressed-overlay: #{$white-pressed-overlay};
+
+	--contrast-hover-overlay: #{$black-hover-overlay};
+	--contrast-focus-overlay: #{$black-focus-overlay};
+	--contrast-pressed-overlay: #{$black-pressed-overlay};
+}
+  
+html {
+    width: 100vw;
+	overflow: hidden;
+	font-size: 62.5%;
+}
+  
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+    font-family: 'Roboto', Helvetica, sans-serif;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+  
+.hide {
+    display: none !important;
+}
+  
+@mixin size($size: 0px) {
+    width: $size;
+    height: $size;
+}
+
+.border-primary {
+    border: 2px solid $primary;
+}
+
+.hit-target {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        z-index: 1;
+    }
+}

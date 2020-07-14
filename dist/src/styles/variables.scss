@@ -1,0 +1,244 @@
+// Spacing
+$space: 8px;
+
+// Color
+$text-high-emphasis: black;// #333; // naming convention based on MUI
+$text-medium-emphasis: #6F6F6F;
+$text-low-emphasis:  #9B9B9B;
+$primary: #0083D5;
+$primary-dark: #0068A8;
+$list-item-border: #C4C4C4;
+$primary-bg: #F6F8FC;
+
+// Font Weight
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-weight-black: 900;
+
+// Excitement Colors
+$excitement-dud: #e4e7bc;
+$excitement-ok: #fade60;
+$excitement-good: #ed8838;
+$excitement-great: #e42f28;
+
+
+
+$primary-50: #D7B7FD;
+$primary-100: #D7B7FD;
+$primary-200: #BB86FC;
+$primary-300: #9E54FC;
+$primary-400: #7F22FD;
+$primary-500: #6202EE;
+$primary-600: #4B01D1;
+$primary-700: #3700B3;
+$primary-800: #280096;
+$primary-900: #190078;
+
+$black-high-emphasis: rgba(0, 0, 0, 0.87);
+$black-medium-emphasis: rgba(0, 0, 0, 0.6);
+$black-disabled: rgba(0, 0, 0, 0.38);
+$black-inactive: rgba(0, 0, 0, 0.54);
+
+$white-high-emphasis: #FFFFFF;
+$white-medium-emphasis: rgba(#FFFFFF, 0.7);
+$white-disabled: rgba(#FFFFFF, 0.5);
+$white-inactive: rgba(#FFFFFF, 0.54);
+
+$surface: #ffffff;
+$surface-2: #FAFAFA;
+
+$input-border: hsl(0, 0%, 90%);
+
+$black-hover-overlay: rgba(0, 0, 0, 0.08);
+$black-focus-overlay: rgba(0, 0, 0, 0.12);
+$black-pressed-overlay: rgba(0, 0, 0, 0.32);
+
+$white-hover-overlay: rgba(255, 255, 255, 0.08);
+$white-focus-overlay: rgba(255, 255, 255, 0.12);
+$white-pressed-overlay: rgba(255, 255, 255, 0.16);
+
+// $primary-action: #86FFEA;
+$primary-action: #18FDE1;
+
+$elevation-1: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 2px rgba(0, 0, 0, 0.14);
+$elevation-2: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14);
+$elevation-3: 0px 1px 8px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 3px 3px rgba(0, 0, 0, 0.14);
+$elevation-4: 0px 1px 10px rgba(0, 0, 0, 0.2), 0px 4px 5px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14);
+$elevation-6: 0px 3px 5px rgba(0, 0, 0, 0.2), 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 6px 10px rgba(0, 0, 0, 0.14);
+$elevation-8:  0px 4px 5px rgba(0, 0, 0, 0.2), 0px 3px 14px rgba(0, 0, 0, 0.12), 0px 8px 10px rgba(0, 0, 0, 0.14);
+$elevation-9: 0px 5px 6px rgba(0, 0, 0, 0.2), 0px 3px 16px rgba(0, 0, 0, 0.12), 0px 9px 12px rgba(0, 0, 0, 0.14);
+$elevation-12: 0px 7px 8px rgba(0, 0, 0, 0.2), 0px 5px 22px rgba(0, 0, 0, 0.12), 0px 12px 17px rgba(0, 0, 0, 0.14);
+$elevation-16: 0px 8px 10px rgba(0, 0, 0, 0.2), 0px 6px 30px rgba(0, 0, 0, 0.12), 0px 16px 24px rgba(0, 0, 0, 0.14);
+$elevation-24: 0px 11px 15px rgba(0, 0, 0, 0.2), 0px 9px 46px rgba(0, 0, 0, 0.12), 0px 24px 38px rgba(0, 0, 0, 0.14);
+
+h1 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 9.6rem;
+    line-height: 11.2rem;
+    /* identical to box height */
+
+    letter-spacing: -1.5px;
+}
+
+h2 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 60px;
+    line-height: 70px;
+    /* identical to box height */
+    
+    letter-spacing: -0.5px;
+}
+
+h3 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 56px;
+    /* identical to box height */
+}
+
+h4 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 34px;
+    line-height: 40px;
+    /* identical to box height */
+    
+    letter-spacing: 0.25px;
+}
+
+h5 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    /* identical to box height */
+}
+
+h6 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    /* identical to box height */
+
+    letter-spacing: 0.15px;
+}
+
+%body-1{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    /* identical to box height, or 156% */
+    
+    letter-spacing: 0.5px;
+}
+
+%body-2{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+    
+    letter-spacing: 0.25px;
+}
+
+%subtitle-1{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    
+    letter-spacing: 0.15px;
+}
+
+%subtitle-2{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+}
+
+%button-text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    /* identical to box height, or 114% */
+    
+    letter-spacing: 0.75px;
+    text-transform: uppercase;
+}
+
+%caption{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+    
+    letter-spacing: 0.4px;
+}
+
+%overline {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 16px;
+    /* identical to box height, or 160% */
+    
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+%absolute-cover {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%
+}
+
+$space: 0.8rem;
+$input-border-radius: $space/2;
+
+// Media Query Ranges
+$small-screen-up: 601px !default;
+$medium-screen-up: 993px !default;
+$large-screen-up: 1201px !default;
+$small-screen: 600px !default;
+$medium-screen: 992px !default;
+$large-screen: 1200px !default;
+
+$medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
+$large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
+$extra-large-and-up: "only screen and (min-width : #{$large-screen-up})" !default;
+$small-and-down: "only screen and (max-width : #{$small-screen})" !default;
+$medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
+$medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
+
+// 3. Grid
+// ==========================================================================
+
+$num-cols: 12 !default;
+$gutter-width: $space !default;

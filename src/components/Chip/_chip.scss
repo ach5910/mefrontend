@@ -1,0 +1,83 @@
+@import "../../../styles/styles.scss";
+.chip {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    --ripple: var(--ripple-origin);
+    background-color: var(--surface-2);
+    background-color: var(--theme-focus-overlay);
+    // opacity: 0.12;
+    cursor: pointer;
+    // border-color: var(--primary-500);
+    padding: $space/2 $space;
+    display: inline-flex;
+    align-items: center;
+    height: 32px;
+    // border: 1px solid var(--primary-500);
+    border-radius: 16px;
+    @extend %body-2;
+    color: var(--primary-400);
+    color: var(--theme-high-emphasis);
+    // color: var(--theme-inactive);
+    box-shadow: none;
+    overflow: hidden;
+    &:after {
+        content: "";
+        @extend %absolute-cover;
+        background-color: var(--primary-500);
+        opacity: 0.12;
+    }
+    &:after {
+        content: "";
+        @extend %absolute-cover;
+        background-color: transparent;
+    }
+    &:focus {
+        &:after{
+            background-color: var(--theme-focus-overlay);
+        }
+    }
+    // > svg {
+    //     height: 20px;
+    // }
+    // &:disabled {
+    //     color: var(--theme-high-emphasis);
+    //     &:after {
+    //         background-color: var(--theme-focus-overlay);
+    //     }
+    // }
+    // &:focus {
+    //     box-shadow: none;
+    //     &:after {
+    //         background-color: var(--primary-500);
+    //         opacity: 0.12;
+    //     }
+    // }
+
+    // &:hover {
+    //     box-shadow: none;
+    //     &:after {
+    //         background-color: var(--primary-500);
+    //         opacity: 0.04;
+    //     }
+    // }
+    // &:first-child {
+    //     border-left: 1px solid var(--primary-500);
+    //     border-top-left-radius: $space*6;
+    //     border-bottom-left-radius: $space*6;
+    // }
+    // &:last-child {
+    //     border-top-right-radius: $space*6;
+    //     border-bottom-right-radius: $space*6;
+    // }
+    // &.active {
+    //     color: var(--primary-500);
+    //     // color: var(--contrast-high-emphasis);
+    //     // background-color: var(--primary-500);
+
+    //     &:after {
+    //         background-color: var(--primary-500);
+    //         opacity: 0.12;
+    //     }
+    // }
+}
