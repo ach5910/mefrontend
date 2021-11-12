@@ -1,0 +1,4 @@
+bit import ach5910.mefrontend/input --ignore-package-json --skip-npm-install --dependencies --ignore-dist
+
+// Log docgen output for a single file
+NODE_ENV="development" npx react-docgen --pretty --resolver findAllComponentDefinitions src/ui/DatePicker/index.jsx

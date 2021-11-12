@@ -1,0 +1,94 @@
+@use "../variables.scss" as *;
+
+.drawer{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 280px;
+    height: 100vh;
+    z-index: 5;
+    background-color: var(--surface);
+    border-right: var(--border);
+    box-shadow: none;
+    overflow: hidden;
+    overflow-y: auto;
+
+    &--modal {
+        box-shadow: $elevation-3;
+        border: none;
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateX(-103%);
+    }
+
+    &--open {
+        transform: translateX(0%);
+    }
+}
+
+$drawer-width: 280px;
+
+.drawer__wrapper{
+    position: absolute;
+    flex: 0 0 auto;
+    left: 0px;
+    top: 0px;
+    width: $drawer-width;
+    height: 100vh;
+    z-index: 5;
+
+    &--modal {
+        width: 0px
+    }
+}
+
+@media #{$large-and-up}{
+    .drawer__wrapper {
+        position: sticky;
+        right: calc(100% - #{$drawer-width});
+        left: unset;
+    }
+}
+.drawer__scrim {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 0px;
+    bottom: 0px;
+    z-index: 5;
+    background-color: rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &--backdrop {
+        width: unset;
+        right: 0px;
+        opacity: 1;
+    }
+}
+
+.drawer__header {
+    padding: $space;
+    border-bottom: var(--border);
+}
+
+.drawer__section {
+    padding: $space;
+    border-bottom: var(--border);
+    > .menu__item {
+        color: var(--theme-medium-emphasis);
+        border-radius: $card-border-radius;
+        font-size: 1.4rem;
+        padding: $space*1.5 $space*2;
+        // padding-left: $spacc
+        margin-bottom: $space/2;
+        &:before, &:after {
+            border-radius: $card-border-radius;
+        }
+    }
+}
+
+.drawer__section-label{
+    @extend %body-1;
+    color: var(--theme-high-contrast);
+    margin: $space $space*2;
+    font-weight: 400;
+}

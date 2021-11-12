@@ -32,6 +32,7 @@ $primary-400: #7F22FD;
 $primary-500: #6202EE;
 $primary-600: #4B01D1;
 $primary-700: #3700B3;
+
 $primary-800: #280096;
 $primary-900: #190078;
 
@@ -46,7 +47,7 @@ $white-disabled: rgba(#FFFFFF, 0.5);
 $white-inactive: rgba(#FFFFFF, 0.54);
 
 $surface: #ffffff;
-$surface-2: #FAFAFA;
+$surface-2: rgb(218, 218, 218);
 
 $input-border: hsl(0, 0%, 90%);
 
@@ -221,6 +222,7 @@ h6 {
 
 $space: 0.8rem;
 $input-border-radius: $space/2;
+$card-border-radius: $space/2;
 
 // Media Query Ranges
 $small-screen-up: 601px !default;

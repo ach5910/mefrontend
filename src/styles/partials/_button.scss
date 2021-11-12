@@ -1,0 +1,268 @@
+@use "../styles.scss" as *;
+
+.btn {
+    --ripple: rgba(255, 255, 255, 0.3);
+    @extend %button-text;
+    @extend .hit-target;
+    background-color: var(--primary-500);
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--primary-500);
+    color: var(--contrast-high-emphasis);
+    cursor: pointer;
+    padding: 1rem 2*$space;
+    outline: none;
+    border-radius: $card-border-radius;
+    min-width: $space*8;
+    transition: all 0.2s ease-in-out;
+    
+    &:hover{
+        box-shadow: $elevation-2;
+        &:after {
+            background-color: var(--contrast-hover-overlay);
+        }
+    }
+    &:disabled {
+        color: var(--theme-disabled);
+        box-shadow: none;
+        cursor: not-allowed;
+        &:after {
+            background-color: transparent;
+        }
+    }
+
+    > svg {
+        height: 24px;
+    }
+
+    &--secondary{
+        min-width: unset;
+        background-color: var(--secondary-500);
+        border-color: var(--secondary-500);
+        border-radius: $card-border-radius;
+        box-shadow: none;
+
+        &:hover {
+            box-shadow: $elevation-2;
+            &:after {
+                background-color: var(--contrast-hover-overlay);
+            }
+        }
+        &:disabled {
+            color: var(--theme-disabled);
+            box-shadow: none;
+            &:after {
+                background-color: var(--theme-focus-overlay);
+            }
+        }
+        
+    }
+
+
+    &--text{
+        min-width: unset;
+        --theme: var(--primary-500);
+        --ripple: var(--ripple-origin);
+        background-color: transparent;
+        border-color: transparent;
+        border-radius: 0px;
+        color: var(--theme);
+        box-shadow: none;
+        
+
+        &:hover {
+            box-shadow: none;
+            &:after {
+                background-color: var(--theme);
+                opacity: 0.04;
+            }
+        }
+        &:disabled {
+            color: var(--theme-disabled);
+            &:after {
+                background-color: var(--theme-focus-overlay);
+                opacity: 1.0;
+            }
+        }
+        
+    }
+
+    &--toggle {
+        min-width: unset;
+        --ripple: var(--ripple-origin);
+        padding: $space;
+        background-color: var(--surface);
+        border-color: var(--surface);
+        color: var(--theme-inactive);
+        border-radius: 0px;
+        &--active {
+            color: var(--primary-500);
+            &:after {
+                background-color: var(--primary-500);
+                opacity: 0.12;
+            }
+        }
+
+        &:disabled {
+            color: var(--theme-disabled);
+        }
+
+        &:focus {
+            &:after {
+                background-color: var(--theme-high-emphasis);
+                opacity: 0.12;
+            }
+        }
+
+        &:hover {
+            background-color: var(--surface)-2;
+            &:after {
+                background-color: var(--theme-high-emphasis);
+                opacity: 0.04;
+            }
+        }
+        &:first-child {
+            border-top-left-radius: $space/2;
+            border-bottom-left-radius: $space/2;
+        }
+        &:last-child {
+            border-top-right-radius: $space/2;
+            border-bottom-right-radius: $space/2;
+        }
+    }
+
+    &--outline{
+        min-width: unset;
+        --theme: var(--primary-500);
+        --ripple: var(--ripple-origin);
+        background-color: transparent;
+        border-color: var(--theme);
+        color: var(--theme);
+        box-shadow: none;
+        
+
+        &:hover {
+            box-shadow: none;
+            &:after {
+                background-color: var(--theme);
+                opacity: 0.04;
+            }
+        }
+        &:disabled {
+            box-shadow: none;
+            border-color: var(--theme-disabled);
+            color: var(--theme-disabled);
+            &:after {
+                background-color: var(--theme-focus-overlay);
+                opacity: 1.0;
+            }
+        }
+        
+    }
+
+    &--tab{
+        min-width: unset;
+        --ripple: var(--ripple-origin);
+        background-color: transparent;
+        padding: $space $space*3;
+        border: 1px solid var(--primary-500);
+        border-radius: 0px;
+        border-left: none;
+        border-right: none;
+        color: var(--primary-500);
+        box-shadow: none;
+        > svg {
+            height: 20px;
+        }
+        &:disabled {
+            color: var(--theme-high-emphasis);
+            &:after {
+                background-color: var(--theme-focus-overlay);
+            }
+        }
+        &:focus {
+            box-shadow: none;
+            &:after {
+                background-color: var(--primary-500);
+                opacity: 0.12;
+            }
+        }
+
+        &:hover {
+            box-shadow: none;
+            &:after {
+                background-color: var(--primary-500);
+                opacity: 0.04;
+            }
+        }
+        &:first-child {
+            border-left: 1px solid var(--primary-500);
+            border-top-left-radius: $space*6;
+            border-bottom-left-radius: $space*6;
+        }
+        &:last-child {
+            border-right: 1px solid var(--primary-500);
+            border-top-right-radius: $space*6;
+            border-bottom-right-radius: $space*6;
+        }
+        &.active {
+            color: var(--primary-500);
+            // color: var(--contrast-high-emphasis);
+            // background-color: var(--primary-500);
+
+            &:after {
+                background-color: var(--primary-500);
+                opacity: 0.12;
+            }
+        }
+        
+    }
+    &--round {
+        border-radius: 32px;
+        &:after {
+            border-radius: 32px;
+        }
+    }
+}
+
+.btn--secondary.btn--outline, .btn--secondary.btn--text {
+    --theme: var(--secondary-500);
+    // color: var(--secondary-500);
+    --ripple: var(--ripple-secondary);
+}
+
+.btn--secondary.btn--outline {
+    // border-color: var(--secondary-500)
+}
+
+.btn ~ .btn {
+    margin-left: $space;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: $space*2;
+    > button{
+        margin: 0px 30px;
+    }
+    > button:first-child{
+        margin-left: 0px;
+    }
+    > button:last-child{
+        margin-right: 0px;
+    }
+    &--margin-top {
+        min-width: unset;
+        margin-top: $space*2;
+    }
+    &--expand{
+        height: auto;
+        flex: 1 1 auto;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: column;
+    }
+}

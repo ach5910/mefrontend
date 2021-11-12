@@ -1,0 +1,80 @@
+@use "../variables" as *;
+
+.tab{
+    --ripple: var(--ripple-origin);
+    @extend .hit-target;
+    border: none;
+    color: var(--theme-inactive);
+    background-color: var(--surface);
+    cursor: pointer;
+    padding: $space*1.5 $space*2;
+    width: 120px;
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+    flex-direction: column;
+    > svg {
+        @include size(24px);
+    }
+
+    &:hover {
+        box-shadow: none;
+        &:after {
+            background-color: var(--primary-500);
+            opacity: 0.04;
+        }
+    }
+
+    // &:focus {
+    //     &:after {
+    //         background-color: var(--theme-focus-overlay);
+    //         opacity: 1;
+    //     }
+    // }
+
+    &:disabled {
+        cursor: not-allowed;
+        color: var(--theme-disabled);
+        &:after {
+            color: var(--theme-disabled);
+            background: var(--theme-disabled);
+            opacity: 0.38;
+        }
+    }
+    &--active {
+        color: var(--primary-500);
+        &:after {
+            background-color: var(--chip-activated);
+        }
+        .tab__label {
+            color: var(--primary-500);
+        }
+    }
+}
+
+.tab__label {
+    @extend %button-text;
+    color: var(--theme-medium-emphasis);
+}
+
+.svg ~ .tab__label {
+    margin-top: $space/2;
+}
+
+.tab__indicator {
+    @extend .absolute-container;
+    top: unset;
+    bottom: 0px;
+    width: 120px;
+    height: 2px;
+    background-color: var(--primary-500);
+}
+
+.tab__bar {
+    display: flex;
+    justify-content:  flex-start;
+    flex-direction:  row;
+    position: relative;
+    left: 0px;
+    top: 0px;
+}

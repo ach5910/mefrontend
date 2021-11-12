@@ -1,0 +1,91 @@
+@import "./selection";
+
+$toggle-trans: 0.2s ease-in-out;
+.toggle {
+    @extend .selection;
+    &--checked {
+        @extend .selection--checked;
+    }
+    &--unchecked {
+        @extend .selection--unchecked;
+    }
+    @include size(20px);
+    top: -3px;
+    left: 0%;
+    margin-top: 0px;
+    margin-left: 0px;
+    border-radius: 10px;
+    transform: translateX(0px);
+    transition: transform $toggle-trans;
+}
+
+.selection__box--toggle {
+    left: 0px;
+    top: -3px;
+    @include size(20px);
+    border-radius: 10px;
+    transform: translateX(0px);
+    transition: background-color $toggle-trans, transform $toggle-trans;
+    background-color: var(--surface);
+    box-shadow: $elevation-1;
+    border: none;
+}
+
+.toggle:checked{
+    transform: translateX(14px);
+    ~ .selection__box {
+        transform: translateX(14px);
+        background-color: var(--primary-500);
+    }
+}
+
+.toggle__track-container{
+    width: 40px;
+    height: 24px;
+    padding: 2px 3px;
+    display: flex;
+    align-items: center;
+}
+
+.toggle__track {
+    width: 34px;
+    height: 14px;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    background-color: var(--theme-pressed-overlay);
+    opacity: 1;
+    transition: background-color $toggle-trans, opacity $toggle-trans;
+    border-radius: 7px;
+    &--checked {
+        background-color: var(--primary-300);
+        opacity: 1;
+    }
+    &--disabled {
+        background-color: var(--theme-hover-overlay);
+        &.toggle__track--checked {
+            background-color: var(--primary-200);
+        }
+    }
+}
+
+.toggle:disabled {
+    cursor: not-allowed;
+    ~ .selection__box {
+        background-color: hsl(0, 0%, 96%);
+    }
+    &:checked {
+        ~ .selection__box {
+            background-color: var(--primary-300);
+        }
+    }
+    &:hover {
+        ~ .selection__box:before {
+            opacity: 0;
+        }
+    }
+}
+
+.selection__label:hover ~ .toggle__track-container .selection__box:before{
+    opacity: 0;
+}

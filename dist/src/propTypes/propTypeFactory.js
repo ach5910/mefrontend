@@ -3,11 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
@@ -83,12 +83,12 @@ var propTypeFactory = function propTypeFactory(propObj) {
 
     if (Array.isArray(optional)) optional.forEach(optionalForEach);
     if (Array.isArray(required)) required.forEach(requiredForEach);
-    if (Object.keys(propTypeObject).length == 0) return _propTypes.default.shape(propType);
-    return _propTypes.default.shape(propTypeObject);
+    if (Object.keys(propTypeObject).length == 0) return _propTypes["default"].shape(propType);
+    return _propTypes["default"].shape(propTypeObject);
   };
 };
 
 var _default = propTypeFactory;
-exports.default = _default;
+exports["default"] = _default;
 
 //# sourceMappingURL=propTypeFactory.js.map

@@ -1,0 +1,96 @@
+@use "./selection-import.scss" as *;
+
+$toggle-trans: 0.2s ease-in-out;
+.toggle {
+    @extend .selection;
+    @include size(100%);
+    top: 0px;
+    left: 0%;
+    margin-top: 0px;
+    margin-left: 0px;
+    border-radius: 10px;
+    &--checked {
+        @extend .selection--checked;
+    }
+    &--unchecked {
+        @extend .selection--unchecked;
+    }
+    // transform: translateX(0px);
+    // transition: transform $toggle-trans;
+}
+
+.selection__box--toggle {
+    position: absolute;
+    left: 9px;
+    top: 9px;
+    @include size(20px);
+    border-radius: 10px;
+    transform: translateX(0px);
+    transition: background-color $toggle-trans, transform $toggle-trans;
+    background-color: var(--surface);
+    box-shadow: $elevation-1;
+    border: none;
+}
+
+.toggle:checked{
+    // transform: translateX(14px);
+    ~ .selection__box {
+        transform: translateX(20px);
+        background-color: var(--primary-500);
+    }
+}
+
+.toggle__track-container{
+    position: relative;
+    left: 0px;
+    top: 0px;
+    width: 58px;
+    height: 38px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.toggle__track {
+    // width: 34px;
+    // height: 14px;
+    @include size(100%);
+    position: relative;
+    left: 0px;
+    top: 0px;
+    background-color: var(--theme-pressed-overlay);
+    opacity: 1;
+    transition: background-color $toggle-trans, opacity $toggle-trans;
+    border-radius: 8px;
+    &--checked {
+        background-color: var(--primary-300);
+        opacity: 1;
+    }
+    &--disabled {
+        background-color: var(--theme-hover-overlay);
+        &.toggle__track--checked {
+            background-color: var(--primary-200);
+        }
+    }
+}
+
+.toggle:disabled {
+    cursor: not-allowed;
+    ~ .selection__box {
+        background-color: hsl(0, 0%, 96%);
+    }
+    &:checked {
+        ~ .selection__box {
+            background-color: var(--primary-300);
+        }
+    }
+    &:hover {
+        ~ .selection__box:before {
+            opacity: 0;
+        }
+    }
+}
+
+.selection__label:hover ~ .toggle__track-container .selection__box:before{
+    opacity: 0;
+}

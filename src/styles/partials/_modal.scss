@@ -1,0 +1,38 @@
+@use "../styles.scss" as *;
+
+.modal-backdrop {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: $space/2;
+    background-color: var(--surface);
+    box-shadow: $elevation-4;
+    padding: $space*2;
+    width: 400px;
+    min-height: 200px;
+}
+
+.modal__header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: $space*2;
+    color: var(--theme-high-emphasis);
+}
+
+.modal__content{
+    @extend %body-2;
+    color: var(--theme-medium-emphasis);
+}

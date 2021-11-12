@@ -1,0 +1,77 @@
+@use "../styles.scss" as *;
+
+.slider {
+    height: $space;
+    width: calc(100% - 20px);
+    position: relative;
+    left: 10px;
+    top:0px;
+    background-color: rgba(0, 0, 0,0.3);
+    margin-bottom: 11px;
+    flex: 0 0 auto;
+}
+
+.slider__track {
+    position: absolute;
+    background-color: var(--primary-200);
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slider__thumb {
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    @include size(20px);
+    border: 4px solid var(--primary-500);
+    border-radius: 50%;
+    transform-origin: 50% 50%;
+    //background-color: var(--surface);
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+    z-index: 1;
+    pointer-events: all;
+}
+
+.slider__thumb-overlay {
+    position: absolute;
+    left: -4px;
+    top: -4px;
+    z-index: 1;
+    @include size(20px);
+    border-radius: 50%;
+    cursor: grab;
+    background-color: transparent;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+    pointer-events: all;
+    &:active {
+        cursor: grabbing;
+    }
+}
+
+$label-size: 40px;
+$pos: ($label-size -  12px) / 2;
+$space: 8px;
+.slider__thumb-label{
+    position: absolute;
+    left: $pos * -1;
+    bottom: 24px;
+    @include size($label-size);
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+    flex-direction:  row;
+}

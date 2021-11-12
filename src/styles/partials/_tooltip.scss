@@ -1,0 +1,23 @@
+@use "../styles.scss" as *;
+
+.tooltip{
+    position: fixed;
+    z-index: 2;
+    background-color: #3c4043;
+    border-radius: $card-border-radius;
+    padding: $space/2 $space;
+    transition: opacity 75ms 0s,left 0s 75ms,top 0s 75ms,visibility 0s 75ms;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 1.2rem;
+    letter-spacing: 0.03rem;
+    font-weight: 500;
+    line-height: 1.6rem;
+    pointer-events: none;
+    color: white;
+    &--visible {
+        transition: opacity 350ms 350ms,visibility 0s;
+        visibility: visible;
+        opacity: 0.9;
+    }
+}

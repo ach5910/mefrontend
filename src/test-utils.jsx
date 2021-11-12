@@ -1,6 +1,10 @@
 import React from "react";
 /* eslint react/prop-types: 0 */
-import {render as rtlRender} from "@testing-library/react";
+import "react-dom";
+import "@bit/ach5910.mefrontend.dom-testing-library";
+import '@testing-library/jest-dom/extend-expect'; 
+import userEvent from "@bit/ach5910.mefrontend.user-event";
+import {render as rtlRender} from "@bit/ach5910.mefrontend.react-testing-library";
 
 /**
  * Extends `@testing-library/react` to add a
@@ -16,7 +20,7 @@ function render(ui) {
 }
 
 // re-export everything
-export * from "@testing-library/react";
+export * from "@bit/ach5910.mefrontend.react-testing-library";
 
 // override render method
-export {render};
+export {render, userEvent};

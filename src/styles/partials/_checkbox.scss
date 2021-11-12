@@ -1,0 +1,38 @@
+
+@use "./selection-import" as *;
+
+.checkbox {
+    @extend .selection;
+    &--checked {
+        @extend .selection--checked;
+    }
+    &--unchecked {
+        @extend .selection--unchecked;
+    }
+}
+.selection__box--checkbox {
+    border-radius: $space/2;
+    @include size(18px);
+    padding: 3px;
+}
+
+.checkbox__check{
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--contrast-high-emphasis);
+    opacity: 0;
+}
+
+.checkbox:checked{
+    ~ .selection__box {
+        border-color: var(--primary-500);
+        background-color: var(--primary-500);
+        .checkbox__check {
+            opacity: 1;
+        }
+    }
+}

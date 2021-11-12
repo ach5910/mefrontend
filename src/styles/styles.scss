@@ -1,2 +1,4 @@
-@import "./variables.scss";
-@import "./main.scss";
+@use "./main.scss" as *;
+@forward "./variables.scss";
+@forward "./partials/grid";
+// @forward 'main';

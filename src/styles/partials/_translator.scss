@@ -1,0 +1,43 @@
+@use '../styles.scss' as *;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: $surface;
+}
+.card {
+    width: 33vw;
+    padding: $space*2;
+    border-radius: $card-border-radius;
+    box-shadow: $elevation-3;
+}
+.card__word {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    @extend h5;
+    padding: $space*2;
+    transition: max-height 150ms linear; 
+    max-height: 300px;
+    overflow: hidden;
+    &:nth-child(2) {
+        border-top: solid 1px  $list-item-border; 
+    }
+    &--hidden {
+        max-height: 0px;
+        padding: 0 $space*2;
+        &:nth-child(2){
+            border-top: none;
+        }
+    }
+}
+
+.card__buttons {
+    display: flex;
+    justify-content: space-around;
+    padding-top: $space*2;
+}
