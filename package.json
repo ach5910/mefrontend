@@ -217,6 +217,9 @@
     "@storybook/react": "^6.0.26",
     "react-is": "^16.13.1"
   },
+  "optionalDependencies": {
+      "fsevents": "*"
+  },
   "resolutions": {
     "ast-types": "^0.14.0"
   }
